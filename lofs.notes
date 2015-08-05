@@ -1,0 +1,17 @@
+fn ist keine special form
+ - Nur ganz am Schluss für Closures
+
+Zwischenschritte beim interpretieren:
+ - Tree nach jedem eval
+ - Nach jedem return tree printen
+
+
+Martin: Fokus auf Compiler (Hochsprache -> Maschinencode)
+ - Interpreter in Python
+ - Interpreter in C
+ - Interpreter in Assembler
+ 
+ 
+Low-prio:
+Alternative: Kompilation direkt zu Assembler
+ - Oder Kompilation zu Python-Bytecode

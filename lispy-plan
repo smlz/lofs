@@ -1,0 +1,70 @@
+Erster Schritt: Taschenrechner
+==============================
+
+Theorie: Tokenizing, Parsing, Atoms, Lists
+
+Default-Environment mit den üblichen Funktionen
+
+Einfaches eval 
+- ohne if, define, lambda
+- mit Symbol im global env finden
+- mit Literals evaluieren
+- Funktionen evaluieren
+
+Ziel:
+(* 34 (+ (// 12 4) 23 ))
+
+
+Zweiter Schritt: Taschenrechner mit Variabeln
+=============================================
+
+Mehrere 'Statements' mit begin
+
+Special forms:
+-  define
+
+Ein globales Environment
+
+Ziel:
+(begin
+ (define pi 3.1459)
+ (define r 10)
+ (* 2 (* pi (* r r)))
+)
+
+Dritter Schritt: Selbstdefinierte Funktionen
+============================================
+
+Special forms:
+- lambda
+
+(begin
+ (define pi 3.14)
+ (define umfang (lambda (radius) (* 2 (* pi radius))))
+ (define r 10)
+ (umfang r)
+)
+
+Vierter Schritt: Eigene Scopes für Funktionen
+=============================================
+
+Problem vorher: namensüberscheidungen
+
+Verschachtelte Scopes, einen für jede neue Funktion
+
+Frage: ermöglicht dies auch echte Closures?
+
+(begin
+ (define pi 3.14)
+ (define umfang (lambda (radius) (* 2 (* pi radius))))
+ (define radius 10)
+ (umfang 3)
+)
+
+
+Füfter Schritt: Rekursion und if
+================================
+
+Special form:
+- if
+
